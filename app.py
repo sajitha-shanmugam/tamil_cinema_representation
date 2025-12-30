@@ -1,5 +1,12 @@
 import streamlit as st
 import pandas as pd
+try:
+    import plotly.express as px
+    PLOTLY_AVAILABLE = True
+except ImportError:
+    PLOTLY_AVAILABLE = False
+    st.warning("⚠️ Plotly not available - using Streamlit charts")
+
 
 st.set_page_config(page_title="Tamil Cinema Representation", layout="wide", page_icon="🇮🇳")
 
@@ -73,3 +80,4 @@ else:
 st.subheader("📊 Movies per Year")
 yearly_count = filtered['year'].value_counts().sort_index()
 st.bar_chart(yearly_count)
+

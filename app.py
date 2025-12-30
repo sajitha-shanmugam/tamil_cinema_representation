@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
+
 
 st.set_page_config(page_title="Tamil Cinema Representation", layout="wide", page_icon="🇮🇳")
 
@@ -125,3 +124,4 @@ st.subheader("📋 Filtered Movies Table")
 st.dataframe(filtered[['title', 'year', 'imdb_rating', 'num_votes', 
                       'female_lead', 'working_woman']].head(20), 
             use_container_width=True, hide_index=True)
+
